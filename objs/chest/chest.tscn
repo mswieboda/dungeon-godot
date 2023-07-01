@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://clfqx371mtlue"]
 
-[ext_resource type="Texture2D" uid="uid://difw8wqhg3sf8" path="res://assets/objs/chest.png" id="1_bgqvi"]
+[ext_resource type="Texture2D" uid="uid://b3c26vuj83aux" path="res://assets/objs/chest.png" id="1_bgqvi"]
 [ext_resource type="Script" path="res://objs/chest/chest.gd" id="2_rovi1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qlcm4"]
