@@ -1,11 +1,12 @@
-[gd_scene load_steps=15 format=3 uid="uid://djc15rwaow68j"]
+[gd_scene load_steps=20 format=3 uid="uid://djc15rwaow68j"]
 
 [ext_resource type="Script" path="res://objs/player/player.gd" id="1_ef62y"]
 [ext_resource type="Texture2D" uid="uid://b2e35b5msy5mv" path="res://assets/objs/player_walk_down.png" id="2_vdstd"]
 [ext_resource type="Texture2D" uid="uid://f0nrkoukck0q" path="res://assets/objs/player_walk_horizontal.png" id="3_5kl7w"]
+[ext_resource type="Texture2D" uid="uid://cod1bng2p2ahd" path="res://assets/objs/player_walk_up.png" id="4_or67s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4bc7i"]
-size = Vector2(16, 16)
+size = Vector2(16, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1pr5w"]
 atlas = ExtResource("2_vdstd")
@@ -41,6 +42,22 @@ region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_npfoh"]
 atlas = ExtResource("3_5kl7w")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vx0j6"]
+atlas = ExtResource("4_or67s")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jxg0t"]
+atlas = ExtResource("4_or67s")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6xv4j"]
+atlas = ExtResource("4_or67s")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8jkpa"]
+atlas = ExtResource("4_or67s")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_f5lxi"]
@@ -89,7 +106,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_lnsqe")
+"texture": SubResource("AtlasTexture_vx0j6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jxg0t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6xv4j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8jkpa")
 }],
 "loop": true,
 "name": &"walk_up",
@@ -100,8 +126,9 @@ animations = [{
 script = ExtResource("1_ef62y")
 
 [node name="collision" type="CollisionShape2D" parent="."]
-position = Vector2(0, 8)
+position = Vector2(0, 12)
 shape = SubResource("RectangleShape2D_4bc7i")
 
 [node name="animated_sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_f5lxi")
+animation = &"walk_up"
