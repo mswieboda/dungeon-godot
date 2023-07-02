@@ -33,7 +33,6 @@ animations = [{
 }]
 
 [node name="pressure_switch" type="Area2D"]
-texture_filter = 1
 
 [node name="collision" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_qmt04")
