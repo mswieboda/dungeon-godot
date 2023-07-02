@@ -59,6 +59,7 @@ texture_filter = 1
 script = ExtResource("1_f4c04")
 
 [node name="tilemap" type="TileMap" parent="."]
+modulate = Color(0.8, 0.8, 0.8, 1)
 tile_set = SubResource("TileSet_382je")
 format = 2
 layer_0/name = "background"
