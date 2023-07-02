@@ -33,4 +33,5 @@ animations = [{
 }]
 
 [node name="chest" type="AnimatedSprite2D"]
+texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_d0uy2")
