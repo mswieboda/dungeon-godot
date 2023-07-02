@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://fcgm7vuj8g0j"]
+[gd_scene load_steps=6 format=3 uid="uid://fcgm7vuj8g0j"]
 
 [ext_resource type="Texture2D" uid="uid://brajabodgv076" path="res://assets/tiles/Blue_Dungeon_Tile_Map.png" id="1_qalem"]
 [ext_resource type="PackedScene" uid="uid://clfqx371mtlue" path="res://objs/chest/chest.tscn" id="2_wej3y"]
+[ext_resource type="PackedScene" uid="uid://djc15rwaow68j" path="res://objs/player/player.tscn" id="3_owgfn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_up17h"]
 resource_name = "dungeon"
@@ -60,3 +61,6 @@ layer_0/tile_data = PackedInt32Array(0, 0, 0, 1, 65536, 0, 2, 65536, 0, 3, 65536
 
 [node name="chest" parent="." instance=ExtResource("2_wej3y")]
 position = Vector2(233, 186)
+
+[node name="player" parent="." instance=ExtResource("3_owgfn")]
+position = Vector2(371, 297)

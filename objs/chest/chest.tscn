@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://clfqx371mtlue"]
+[gd_scene load_steps=5 format=3 uid="uid://clfqx371mtlue"]
 
 [ext_resource type="Texture2D" uid="uid://b3c26vuj83aux" path="res://assets/objs/chest.png" id="1_bgqvi"]
-[ext_resource type="Script" path="res://objs/chest/chest.gd" id="2_rovi1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qlcm4"]
 atlas = ExtResource("1_bgqvi")
@@ -16,15 +15,22 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qlcm4")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qlcm4")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_12rtf")
 }],
-"loop": true,
-"name": &"default",
+"loop": false,
+"name": &"open",
 "speed": 5.0
 }]
 
 [node name="chest" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_d0uy2")
-script = ExtResource("2_rovi1")
