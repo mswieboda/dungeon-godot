@@ -72,7 +72,6 @@ layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array(9, 1, 65536)
 
 [node name="gate" parent="tilemap" instance=ExtResource("3_n3261")]
-z_index = 3
 position = Vector2(304, 16)
 
 [node name="y_ordered_objs" type="Node2D" parent="."]
