@@ -83,7 +83,7 @@ y_sort_enabled = true
 position = Vector2(305, -66)
 
 [node name="player" parent="y_ordered_objs" instance=ExtResource("3_owgfn")]
-z_index = 2
+z_index = 1
 position = Vector2(371, 297)
 
 [node name="camera" type="Camera2D" parent="y_ordered_objs/player"]
@@ -95,5 +95,5 @@ position = Vector2(352, 182)
 [node name="pressure_switch" parent="y_ordered_objs" instance=ExtResource("5_qp32e")]
 position = Vector2(448, 187)
 
-[connection signal="body_entered" from="y_ordered_objs/pressure_switch" to="." method="_on_pressure_switch_body_entered"]
-[connection signal="body_exited" from="y_ordered_objs/pressure_switch" to="." method="_on_pressure_switch_body_exited"]
+[connection signal="pressed" from="y_ordered_objs/pressure_switch" to="." method="_on_pressure_switch_pressed"]
+[connection signal="released" from="y_ordered_objs/pressure_switch" to="." method="_on_pressure_switch_released"]

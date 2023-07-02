@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bk1xw3jfbpren"]
+[gd_scene load_steps=7 format=3 uid="uid://bk1xw3jfbpren"]
 
 [ext_resource type="Texture2D" uid="uid://mvobaj86kyhf" path="res://assets/objs/pressure_switch.png" id="1_61w16"]
+[ext_resource type="Script" path="res://objs/pressure_switch/pressure_switch.gd" id="1_jhwfn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qmt04"]
 size = Vector2(32, 16)
@@ -33,9 +34,13 @@ animations = [{
 }]
 
 [node name="pressure_switch" type="Area2D"]
+script = ExtResource("1_jhwfn")
 
 [node name="collision" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_qmt04")
 
 [node name="animated_sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_p6xdd")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
