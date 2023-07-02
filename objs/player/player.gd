@@ -6,12 +6,6 @@ const PUSH_FORCE = 300
 func _physics_process(delta):
   movement(delta)
 
-  if Input.is_action_just_pressed("ui_accept"):
-    print(">>> open door")
-    var tilemap = get_parent().get_parent().get_node("tilemap") as TileMap
-    # tilemap.erase_cell(0, Vector2i(9, 0))
-    tilemap.set_cell(0, Vector2i(9, 0), 0, Vector2i(1, 1))
-
 func movement(delta):
   # Get the input direction and handle the movement/deceleration.
   var h_direction = Input.get_axis("move_left", "move_right")
