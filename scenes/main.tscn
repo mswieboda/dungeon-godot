@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://fcgm7vuj8g0j"]
+[gd_scene load_steps=10 format=3 uid="uid://fcgm7vuj8g0j"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_f4c04"]
 [ext_resource type="Texture2D" uid="uid://brajabodgv076" path="res://assets/tiles/Blue_Dungeon_Tile_Map.png" id="1_qalem"]
@@ -48,16 +48,11 @@ texture_region_size = Vector2i(32, 32)
 2:2/0/physics_layer_0/angular_velocity = 0.0
 2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
-[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_m2nql"]
-resource_name = "scenes"
-scenes/1/scene = ExtResource("3_n3261")
-
 [sub_resource type="TileSet" id="TileSet_382je"]
 tile_size = Vector2i(32, 32)
 uv_clipping = true
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_up17h")
-sources/1 = SubResource("TileSetScenesCollectionSource_m2nql")
 
 [node name="main" type="Node2D"]
 texture_filter = 1
@@ -77,6 +72,10 @@ layer_1/y_sort_origin = 0
 layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array(9, 1, 65536)
 
+[node name="gate" parent="tilemap" instance=ExtResource("3_n3261")]
+z_index = 3
+position = Vector2(304, 16)
+
 [node name="y_ordered_objs" type="Node2D" parent="."]
 y_sort_enabled = true
 
@@ -84,11 +83,13 @@ y_sort_enabled = true
 position = Vector2(305, -66)
 
 [node name="player" parent="y_ordered_objs" instance=ExtResource("3_owgfn")]
+z_index = 2
 position = Vector2(371, 297)
 
 [node name="camera" type="Camera2D" parent="y_ordered_objs/player"]
 
 [node name="box" parent="y_ordered_objs" instance=ExtResource("4_mxvpf")]
+z_index = 1
 position = Vector2(352, 182)
 
 [node name="pressure_switch" parent="y_ordered_objs" instance=ExtResource("5_qp32e")]
