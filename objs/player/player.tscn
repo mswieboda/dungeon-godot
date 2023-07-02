@@ -1,9 +1,10 @@
-[gd_scene load_steps=20 format=3 uid="uid://djc15rwaow68j"]
+[gd_scene load_steps=25 format=3 uid="uid://djc15rwaow68j"]
 
 [ext_resource type="Script" path="res://objs/player/player.gd" id="1_ef62y"]
 [ext_resource type="Texture2D" uid="uid://b2e35b5msy5mv" path="res://assets/objs/player_walk_down.png" id="2_vdstd"]
 [ext_resource type="Texture2D" uid="uid://f0nrkoukck0q" path="res://assets/objs/player_walk_horizontal.png" id="3_5kl7w"]
 [ext_resource type="Texture2D" uid="uid://cod1bng2p2ahd" path="res://assets/objs/player_walk_up.png" id="4_or67s"]
+[ext_resource type="Texture2D" uid="uid://twjgw30w21i6" path="res://assets/objs/player_whip.png" id="5_bu8mt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4bc7i"]
 size = Vector2(16, 8)
@@ -60,6 +61,22 @@ region = Rect2(64, 0, 32, 32)
 atlas = ExtResource("4_or67s")
 region = Rect2(96, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_wt3fu"]
+atlas = ExtResource("5_bu8mt")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2i65g"]
+atlas = ExtResource("5_bu8mt")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1x4ln"]
+atlas = ExtResource("5_bu8mt")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_47n1x"]
+atlas = ExtResource("5_bu8mt")
+region = Rect2(96, 0, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_f5lxi"]
 animations = [{
 "frames": [{
@@ -68,7 +85,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -85,7 +102,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_down",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -102,7 +119,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_horizontal",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -119,7 +136,24 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_up",
-"speed": 5.0
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wt3fu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2i65g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1x4ln")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_47n1x")
+}],
+"loop": false,
+"name": &"whip_horizontal",
+"speed": 24.0
 }]
 
 [node name="player" type="CharacterBody2D"]
