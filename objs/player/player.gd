@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 const SPEED = 6900
+const PUSH_FORCE = 300
 
 func _physics_process(delta):
   # Get the input direction and handle the movement/deceleration.
@@ -34,4 +35,10 @@ func _physics_process(delta):
   if not v_direction:
     velocity.y = move_toward(velocity.y, 0, speed)
 
-  move_and_slide()
+  if move_and_slide() and (h_direction or v_direction): # true if collision
+    for i in get_slide_collision_count():
+      var col = get_slide_collision(i)
+
+      # TODO: also check if it's a "block"
+      if col.get_collider() is RigidBody2D:
+        col.get_collider().apply_force(col.get_normal() * -PUSH_FORCE)
