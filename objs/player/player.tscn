@@ -131,4 +131,3 @@ shape = SubResource("RectangleShape2D_4bc7i")
 
 [node name="animated_sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_f5lxi")
-animation = &"walk_up"

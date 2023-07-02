@@ -1,24 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cwdk8myja4oje"]
+[gd_scene load_steps=3 format=3 uid="uid://cwdk8myja4oje"]
 
-[ext_resource type="Texture2D" uid="uid://b3c26vuj83aux" path="res://assets/objs/chest.png" id="1_4611i"]
+[ext_resource type="Texture2D" uid="uid://c7wf26swigx4b" path="res://assets/objs/block.png" id="1_rkg1t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uufly"]
-size = Vector2(24, 8)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qcyq8"]
-atlas = ExtResource("1_4611i")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_g53bh"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qcyq8")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+size = Vector2(32, 16)
 
 [node name="box" type="RigidBody2D"]
 gravity_scale = 0.0
@@ -27,6 +12,5 @@ gravity_scale = 0.0
 position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_uufly")
 
-[node name="animated_sprite" type="AnimatedSprite2D" parent="."]
-self_modulate = Color(0, 0.360784, 1, 1)
-sprite_frames = SubResource("SpriteFrames_g53bh")
+[node name="sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_rkg1t")
